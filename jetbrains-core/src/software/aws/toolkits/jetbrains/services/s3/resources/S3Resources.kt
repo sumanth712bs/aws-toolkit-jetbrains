@@ -47,9 +47,6 @@ object S3Resources {
     }
 
     @JvmStatic
-    fun listBucketNamesByActiveRegion(project: Project): Resource<List<String>> = listBucketsByActiveRegion(project).map { it.name() }
-
-    @JvmStatic
     fun formatDate(date: Instant): String {
         val datetime = LocalDateTime.ofInstant(date, ZoneId.systemDefault())
         return datetime.atZone(ZoneId.systemDefault())
